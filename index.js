@@ -52,12 +52,12 @@
     for (let i = 0; i < createShipBtns.length; i++) {
       createShipBtns[i].addEventListener("click", createShip);
     }
-    let chooseShipBtns = qsa("#user-ships > button");
+    let chooseShipBtns = qsa("#user-ships button");
     for (let i = 0; i < chooseShipBtns.length; i++) {
       chooseShipBtns[i].addEventListener("click", addShip);
       chooseShipBtns[i].disabled = true;
     }
-    let guessOptions = qsa("#user-guess > button");
+    let guessOptions = qsa("#user-guess button");
     for (let i = 0; i < guessOptions.length; i++) {
       guessOptions[i].disabled = true;
       guessOptions[i].addEventListener("click", addUserGuess);
@@ -93,7 +93,7 @@
   }
 
   function enableChoosingUserShips(yes) {
-    let chooseBtns = qsa("#user-ships > button");
+    let chooseBtns = qsa("#user-ships button");
     for (let i = 0; i < chooseBtns.length; i++) {
       chooseBtns[i].disabled = !yes;
     }
@@ -154,13 +154,13 @@
     getId("start-game").disabled = true;
     // set up AI's functionality with 5x5x2 grid with random ships
     createAIShips();
-    getId("turn-text").classList.remove("hidden");
+    getId("turn-text-container").classList.remove("hidden");
     enableGuessOptions(true);
   }
 
   function enableGuessOptions(yes) {
     getId("turn-text").textContent = "It's your turn! Click on a square to guess if there's a ship there. It will turn red  on ship sunk, gray on miss, and yellow on a ship hit";
-    let guessOptions = qsa("#user-guess > button");
+    let guessOptions = qsa("#user-guess button");
     for (let i = 0; i < guessOptions.length; i++) {
       guessOptions[i].disabled = !yes;
     }
@@ -423,6 +423,7 @@
 
   function displayUserGrid() {
     getId("user-view").classList.remove("hidden");
+    getId("create-ship").classList.remove("hidden");
     getId("add-ships").disabled = true;
   }
 

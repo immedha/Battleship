@@ -2,15 +2,7 @@
   display: none !important;
 }
 
-#user-ships, #user-guess {
-  display: inline-grid;
-  grid-template-columns: auto auto auto auto auto;
-  grid-template-rows: auto auto auto auto auto;
-  margin: 10px;
-}
-
-#user-ships > button, #user-guess > button {
-  border: 1px solid rgba(0, 0, 0, 0.8);
+#user-ships button, #user-guess button {
   height: 90px;
   width: 100px;
 }
@@ -22,10 +14,12 @@
   justify-content: center;
 }
 
-#create-ship > button, #choose-ship-type > button {
-  width: 100px;
-  height: 50px;
+#create-ship > button, #choose-ship-type > button, #user-ships-container, #user-guess-container {
   margin: 10px;
+}
+
+#user-ships-container {
+  margin-right: 30px;
 }
 
 #user-view > section {
@@ -33,23 +27,4 @@
   flex-direction: column;
   align-content: center;
   justify-content: center;
-}
-
-.make-red {
-  background-color: rgba(249, 118, 91, 0.616);
-}
-
-.make-yellow {
-  background-color: rgb(218, 198, 66);
-}
-
-.make-green {
-  background-color: rgb(163, 236, 163);
-}
-
-.make-orange {
-  background-color: orange;
-}
-.make-gray {
-  background-color: gray;
 }
